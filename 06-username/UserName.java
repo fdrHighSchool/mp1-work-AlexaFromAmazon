@@ -6,6 +6,8 @@ public class UserName {
     // create Scanner object
     Scanner s = new Scanner(System.in);
     int inSeconds = 0;
+    String email = " ";
+    //String password = "";
     // get String input from user
     System.out.println("What is your first name?");
     String firstName = s.nextLine().toLowerCase();
@@ -36,10 +38,23 @@ public class UserName {
     System.out.println("We will now bestow upon you your username and email.");
     if(positionStatus.equals("student")) {
         System.out.println(firstName+ initialingName(lastName) + favoriteNumber + "@nycstudents.net");
+        email = (firstName+ initialingName(lastName) + favoriteNumber + "@nycstudents.net");
     } else {
         System.out.println(initialingName(firstName) + lastName + favoriteNumber + "@schools.nyc.gov");
+        email = (initialingName(firstName) + lastName + favoriteNumber + "@schools.nyc.gov");
     }
     System.out.println(" ");
+    System.out.println("How long do you wish your password to be?");
+    int length = s.nextInt();
+    //generatePassword(length);
+    System.out.println(" ");
+    System.out.println("Please be on standby as we generate your full length password as you have requested.");
+    loadingBar();
+    System.out.println(" ");
+    System.out.println("Here is your email and password: ");
+    System.out.println("Your Email - "+email);
+    System.out.println("Your Pass - "+generatePassword(length));
+    
     // test output
     // System.out.println("Hello " + initialingName(firstName) + "." + initialingName(lastName) + ".");
     s.close();
@@ -59,6 +74,29 @@ public class UserName {
     System.out.flush();
     return inSeconds;
   } // end of freezeTime method
+  public static String generatePassword(int length) {
+      String password = "";
+      for(int i = 0; i < length; i++) {
+      // Temporary
+      int min = 0;
+      int max = 0;
+      int randomList = (int)(Math.random()*3);
+      if(randomList == 0) {
+        min = 65;
+        max = 90;
+      } else if(randomList == 1) {
+        min = 97;
+        max = 122;
+      } else {
+        min = 33;
+        max = 47;
+      }
+      int rand1 = (int)((Math.random() * (max - min) + 1) + min);
+      char c = (char)rand1;
+      password += c;
+    }
+    return password;
+  }
   // creates a loading with the usage of the above method ^
   public static void loadingBar() {
     freezeTime(12);
