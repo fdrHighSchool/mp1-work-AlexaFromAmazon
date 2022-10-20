@@ -7,19 +7,19 @@ public class Date
         String day;
         int year;
         String month;
-        // date
+        // ask for the date
         Scanner in = new Scanner(System.in);
         System.out.println("What is the date?");
         day = in.nextLine();
-        // month
+        // ask for month
         System.out.println(" ");
         System.out.println("What is the month?");
         month = in.nextLine();
-        // number            
+        // ask for number of today            
         System.out.println(" ");
         System.out.println("What is today?");
         date = in.nextInt();
-        // year
+        // ask for year
         System.out.println(" ");
         System.out.println("What is the year?");
         year = in.nextInt();

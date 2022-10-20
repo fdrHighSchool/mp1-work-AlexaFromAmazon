@@ -35,6 +35,5 @@ public class Lanternfly
             System.out.println("Ok now go home");
             System.out.println(" ");
         } // end else statement
-        
-    }
+    } // end input method
 } // end class

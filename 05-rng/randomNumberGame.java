@@ -64,5 +64,5 @@ public class randomNumberGame
             System.out.println(" ");
         }
     }
-    }
+  }
 }
